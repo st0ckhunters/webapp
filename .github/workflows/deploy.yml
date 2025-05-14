@@ -29,3 +29,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/sistema-gestion/browser
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
