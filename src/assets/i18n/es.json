@@ -1,0 +1,52 @@
+{
+  "HEADER": {
+    "DASHBOARD": "Dashboard",
+    "CLIENTS": "Clientes",
+    "PRODUCTS": "Productos",
+    "SALES": "Ventas",
+    "REPORTS": "Reportes"
+  },
+  "AUTH": {
+    "LOGIN": "Acceder",
+    "REGISTER": "Registrarse",
+    "LOGIN_TITLE": "Iniciar Sesión",
+    "EMAIL": "Correo",
+    "EMAIL_PLACEHOLDER": "Ingrese su correo",
+    "PASSWORD": "Contraseña",
+    "PASSWORD_PLACEHOLDER": "Ingrese su contraseña",
+    "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?",
+    "LOGIN_BUTTON": "Acceder",
+    "LOGIN_WITH_GOOGLE": "Acceder con Google"
+  },
+  "USERS": {
+    "WELCOME": "Bienvenido,",
+    "SELECT_USER": "Selecciona un usuario para continuar"
+  },
+  "DASHBOARD": {
+    "GREETING": "Hola",
+    "SUMMARY": "Resumen",
+    "MONTHLY_INCOME": "Ingresos Mensuales",
+    "TOTAL_STOCK": "Total Stock",
+    "SALES_TODAY": "Ventas Hoy",
+    "SALES": "Ventas",
+    "RECENT_ACTIVITY": "Actividad Reciente"
+  },
+  "PRODUCTS": {
+    "TITLE": "Productos",
+    "SEARCH": "Buscar",
+    "SELECT": "Seleccionar",
+    "ADD": "Agregar"
+  },
+  "SALES": {
+    "TITLE": "Ventas",
+    "SEARCH": "Buscar",
+    "SELECT": "Seleccionar",
+    "ADD": "Agregar",
+    "DATE": "Fecha",
+    "PRODUCT": "Producto",
+    "QUANTITY": "Cantidad",
+    "STATUS": "Estado",
+    "CLIENT": "Cliente",
+    "STATUS_COMPLETED": "Completado"
+  }
+}

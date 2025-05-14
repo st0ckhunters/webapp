@@ -1,0 +1,51 @@
+<div class="app-container" [ngClass]="{'dark-theme': themeService.isDarkTheme$ | async}">
+    <app-header></app-header>
+    
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1 class="greeting">{{ 'DASHBOARD.GREETING' | translate }}, {{ currentUser?.name || 'User' }}</h1>
+      </div>
+      
+      <div class="dashboard-content">
+        <div class="dashboard-summary">
+          <h2 class="section-title">{{ 'DASHBOARD.SUMMARY' | translate }}</h2>
+          
+          <div class="summary-cards">
+            <div class="summary-card">
+              <div class="card-label">{{ 'DASHBOARD.MONTHLY_INCOME' | translate }}</div>
+              <div class="card-value">${{ summary.income }}</div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="card-label">{{ 'DASHBOARD.TOTAL_STOCK' | translate }}</div>
+              <div class="card-value">{{ summary.stock }}</div>
+            </div>
+            
+            <div class="summary-card">
+              <div class="card-label">{{ 'DASHBOARD.SALES_TODAY' | translate }}</div>
+              <div class="card-value">{{ summary.salesTotal }}</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dashboard-charts">
+          <div class="sales-chart-container">
+            <h2 class="section-title">{{ 'DASHBOARD.SALES' | translate }}</h2>
+            <div class="chart-wrapper">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+          
+          <div class="recent-activity">
+            <h2 class="section-title">{{ 'DASHBOARD.RECENT_ACTIVITY' | translate }}</h2>
+            <div class="activity-list">
+              <div class="activity-item" *ngFor="let activity of recentActivity">
+                <div class="activity-title">{{ activity.title }}</div>
+                <div class="activity-time">{{ activity.timestamp }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

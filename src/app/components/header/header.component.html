@@ -1,0 +1,41 @@
+<header class="app-header">
+    <div class="logo">
+      <span>LOGO</span>
+    </div>
+    
+    <nav class="nav-menu" *ngIf="authService.isAuthenticated$ | async">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a [routerLink]="['/dashboard']" routerLinkActive="active">{{ 'HEADER.DASHBOARD' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/products']" routerLinkActive="active">{{ 'HEADER.PRODUCTS' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/sales']" routerLinkActive="active">{{ 'HEADER.SALES' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/reports']" routerLinkActive="active">{{ 'HEADER.REPORTS' | translate }}</a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <!-- Selector de idioma -->
+      <div class="language-selector">
+        <button (click)="changeLanguage('es')">ES</button>
+        <button (click)="changeLanguage('en')">EN</button>
+      </div>
+      
+      <!-- Toggle de tema -->
+      <button class="theme-toggle" (click)="toggleTheme()">
+        <span *ngIf="(themeService.isDarkTheme$ | async) === false">🌙</span>
+        <span *ngIf="themeService.isDarkTheme$ | async">☀️</span>
+      </button>
+      
+      <!-- Usuario -->
+      <div class="user-menu" *ngIf="authService.isAuthenticated$ | async">
+        <button (click)="logout()">Salir</button>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,28 @@
+<div class="app-container" [ngClass]="{'dark-theme': themeService.isDarkTheme$ | async}">
+  <app-header></app-header>
+
+  <div class="users-container">
+    <div class="users-content">
+      <div class="company-profile">
+        <div class="company-avatar"></div>
+        <h1 class="welcome-title">{{ 'USERS.WELCOME' | translate }} [empresa]</h1>
+        <p class="select-instruction">{{ 'USERS.SELECT_USER' | translate }}</p>
+      </div>
+
+      <div class="users-grid">
+        <div *ngFor="let user of users" class="user-card" (click)="selectUser(user)">
+          <div class="user-avatar"></div>
+          <div class="user-name">{{ user.name }}</div>
+        </div>
+
+        <!-- Mostrar placeholders mientras carga -->
+        <ng-container *ngIf="loading">
+          <div class="user-card placeholder" *ngFor="let i of [1,2,3,4,5,6]">
+            <div class="user-avatar placeholder-avatar"></div>
+            <div class="user-name placeholder-text"></div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

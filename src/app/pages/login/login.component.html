@@ -1,0 +1,60 @@
+<div class="login-container" [ngClass]="{'dark-theme': themeService.isDarkTheme$ | async}">
+    <div class="login-header">
+      <div class="logo">LOGO</div>
+      <div class="auth-actions">
+        <button class="btn btn-secondary">{{ 'AUTH.REGISTER' | translate }}</button>
+        <button class="btn btn-primary">{{ 'AUTH.LOGIN' | translate }}</button>
+      </div>
+    </div>
+    
+    <div class="login-content">
+      <div class="login-form-container">
+        <div class="login-form-wrapper">
+          <h2 class="login-title">{{ 'AUTH.LOGIN_TITLE' | translate }}</h2>
+          
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+            <div class="form-group">
+              <label for="email">{{ 'AUTH.EMAIL' | translate }} *</label>
+              <input 
+                type="email" 
+                formControlName="email" 
+                class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" 
+                placeholder="{{ 'AUTH.EMAIL_PLACEHOLDER' | translate }}"
+              />
+            </div>
+            
+            <div class="form-group">
+              <div class="password-label-container">
+                <label for="password">{{ 'AUTH.PASSWORD' | translate }} *</label>
+                <a href="javascript:void(0)" class="forgot-password">{{ 'AUTH.FORGOT_PASSWORD' | translate }}</a>
+              </div>
+              <input 
+                type="password" 
+                formControlName="password" 
+                class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" 
+                placeholder="{{ 'AUTH.PASSWORD_PLACEHOLDER' | translate }}"
+              />
+            </div>
+            
+            <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary btn-block">
+                {{ 'AUTH.LOGIN_BUTTON' | translate }}
+              </button>
+            </div>
+            
+            <div class="form-group">
+              <button type="button" (click)="loginWithGoogle()" class="btn btn-google btn-block">
+                {{ 'AUTH.LOGIN_WITH_GOOGLE' | translate }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="login-image">
+        <img src="assets/images/login-illustration.svg" alt="Login Illustration" class="login-illustration">
+      </div>
+    </div>
+  </div>

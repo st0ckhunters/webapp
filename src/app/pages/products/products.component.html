@@ -1,0 +1,58 @@
+<div class="app-container" [ngClass]="{'dark-theme': themeService.isDarkTheme$ | async}">
+  <app-header></app-header>
+
+  <div class="products-container">
+    <div class="products-header">
+      <h1 class="page-title">{{ 'PRODUCTS.TITLE' | translate }}</h1>
+
+      <div class="products-actions">
+        <div class="search-box">
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            (input)="searchProducts()"
+            placeholder="{{ 'PRODUCTS.SEARCH' | translate }}"
+            class="search-input"
+          >
+        </div>
+
+        <button class="btn btn-secondary" (click)="selectProduct(filteredProducts[0])">
+          {{ 'PRODUCTS.SELECT' | translate }}
+        </button>
+
+        <button class="btn btn-primary" (click)="addProduct()">
+          {{ 'PRODUCTS.ADD' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      <div *ngFor="let product of filteredProducts" class="product-card" (click)="selectProduct(product)">
+        <div class="product-image"></div>
+        <div class="product-info">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <div class="product-meta">
+            <span class="product-category">{{ product.category }}</span>
+            <span class="product-price">${{ product.price }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mostrar placeholders mientras carga -->
+      <ng-container *ngIf="loading">
+        <div class="product-card placeholder" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]">
+          <div class="product-image placeholder-image"></div>
+          <div class="product-info">
+            <div class="placeholder-text placeholder-name"></div>
+            <div class="placeholder-text placeholder-description"></div>
+            <div class="product-meta">
+              <div class="placeholder-text placeholder-category"></div>
+              <div class="placeholder-text placeholder-price"></div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

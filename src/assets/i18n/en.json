@@ -1,0 +1,52 @@
+{
+  "HEADER": {
+    "DASHBOARD": "Dashboard",
+    "CLIENTS": "Clients",
+    "PRODUCTS": "Products",
+    "SALES": "Sales",
+    "REPORTS": "Reports"
+  },
+  "AUTH": {
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "LOGIN_TITLE": "Login",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "PASSWORD": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "FORGOT_PASSWORD": "Forgot your password?",
+    "LOGIN_BUTTON": "Login",
+    "LOGIN_WITH_GOOGLE": "Login with Google"
+  },
+  "USERS": {
+    "WELCOME": "Welcome,",
+    "SELECT_USER": "Select a user to continue"
+  },
+  "DASHBOARD": {
+    "GREETING": "Hello",
+    "SUMMARY": "Summary",
+    "MONTHLY_INCOME": "Monthly Income",
+    "TOTAL_STOCK": "Total Stock",
+    "SALES_TODAY": "Sales Today",
+    "SALES": "Sales",
+    "RECENT_ACTIVITY": "Recent Activity"
+  },
+  "PRODUCTS": {
+    "TITLE": "Products",
+    "SEARCH": "Search",
+    "SELECT": "Select",
+    "ADD": "Add"
+  },
+  "SALES": {
+    "TITLE": "Sales",
+    "SEARCH": "Search",
+    "SELECT": "Select",
+    "ADD": "Add",
+    "DATE": "Date",
+    "PRODUCT": "Product",
+    "QUANTITY": "Quantity",
+    "STATUS": "Status",
+    "CLIENT": "Client",
+    "STATUS_COMPLETED": "Completed"
+  }
+}
